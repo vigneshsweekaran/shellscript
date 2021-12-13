@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Delete branches which has no commits for x days
+
 git fetch --all > /dev/null 2>&1
 flag_delete=false
 
@@ -32,6 +34,8 @@ if [[ $1 == "clean" ]]; then
     fi
   done
 fi
+
+# To move branches from one folder to another folder
 
 retval="true"
 
