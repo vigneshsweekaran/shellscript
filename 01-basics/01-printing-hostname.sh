@@ -1,9 +1,5 @@
 #!/bin/sh
 
-ip=`hostname` or #$(hostname)
+MY_HOSTNAME=$(hostname)
 
-echo "My system IP is ${ip}"
-
-read yourname
-
-echo "Hello $yourname"
+echo "My system name is ${MY_HOSTNAME}"
