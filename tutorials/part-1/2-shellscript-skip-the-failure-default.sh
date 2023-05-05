@@ -6,7 +6,7 @@ echo $?
 
 false
 
-echo $?
+echo $?f
 
 echo "After Error"
 echo "I am running fine"
