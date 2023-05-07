@@ -3,7 +3,7 @@
 set -e
 
 TARGET_PATH="/tmp"
-TARGET_FOLDERS="log_files" "error_files" "access_files"
+TARGET_FOLDERS=("log_files" "error_files" "access_files")
 FILE_EXTENSIONS=(".log" ".txt")
 TARGET_DAYS="10"
 
