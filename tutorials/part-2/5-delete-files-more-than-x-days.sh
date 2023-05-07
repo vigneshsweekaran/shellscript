@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 PATH="/tmp"
 TARGET_FOLDERS="log_files", "error_files", "access_files"
 FILE_EXTENSIONS=(".log", ".txt")
