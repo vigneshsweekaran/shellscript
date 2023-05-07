@@ -12,6 +12,6 @@ do
   for extension in ${FILE_EXTENSIONS[@]}
   do
     echo "Deleting file extension ${extension} in folder ${folder}"
-    find ${TARGET_PATH}/${folder} -type f -name "*${extension}" -mmin +1 +${TARGET_TIME_IN_MINUTES} -delete
+    find ${TARGET_PATH}/${folder} -type f -name "*${extension}" -mmin +${TARGET_TIME_IN_MINUTES} -delete
   done
 done
