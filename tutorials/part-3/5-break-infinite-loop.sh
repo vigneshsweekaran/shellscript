@@ -1,15 +1,16 @@
 #!/bin/bash
 
-counter=0
-
 while [ true ] 
 do
-  sleep 1
-  if [ $counter -eq 10 ]
+  systemctl status httpd > /dev/null
+  httpd_status=$(echo $?)
+  echo "The httpd status is ${httpd_status}"
+  
+  if [ $httpd_status -ne 0 ]
   then
+    echo "Httpd application stoppped !!"
     break
   fi
 
-  counter=$(( $counter + 1 ))
+  sleep 1
 done
-
