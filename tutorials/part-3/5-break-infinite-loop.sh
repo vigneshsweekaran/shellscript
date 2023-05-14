@@ -8,7 +8,7 @@ do
   
   if [ $httpd_status -ne 0 ]
   then
-    echo "Httpd application stoppped !!"
+    echo "Httpd application stopped !!"
     break
   fi
 
