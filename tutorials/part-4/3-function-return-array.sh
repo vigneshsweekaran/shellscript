@@ -14,7 +14,7 @@ addition() {
 }
 
 # Calling the function
-addition 20 10
+addition 20 5
 
 # Capture the result returnd by last command
 result=$?
