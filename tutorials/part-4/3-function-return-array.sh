@@ -1,27 +1,24 @@
 #!/bin/sh
 
+output=()
+
 # Function Definition
-addition() {
+calculate() {
   num1=$1
   num2=$2
 
   output_add=$(( num1 + num2 ))
   output_sub=$(( num1 - num2 ))
   output_multiply=$(( num1 * num2 ))
-  output_division=$(( num1 % num2 ))
+  output_division=$(( num1 / num2 ))
 
   output=("$output_add" "$output_sub" "$output_multiply" "$output_division")
-
-  return $output
 }
 
 # Calling the function
-addition 20 5
+calculate 20 5
 
-# Capture the result returnd by last command
-result=$?
-
-echo "The addition result is ${result[0]}"
-echo "The addition result is ${result[1]}"
-echo "The addition result is ${result[2]}"
-echo "The addition result is ${result[3]}"
+echo "The addition result is ${output[0]}"
+echo "The subraction result is ${output[1]}"
+echo "The multiplication result is ${output[2]}"
+echo "The division result is ${output[3]}"
