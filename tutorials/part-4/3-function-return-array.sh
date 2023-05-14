@@ -10,7 +10,9 @@ addition() {
   output_multiply=$(( num1 * num2 ))
   output_division=$(( num1 % num2 ))
 
-  return ( $output_add $output_sub $output_multiply $output_division )
+  output=("$output_add" "$output_sub" "$output_multiply" "$output_division")
+
+  return $output
 }
 
 # Calling the function
