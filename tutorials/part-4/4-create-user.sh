@@ -1,34 +1,57 @@
 #!/bin/bash
 
-users=(raghav mani manoj devops)
+users_list=(raghav mani manoj devops)
+delete_users_list=(raghav)
 
-chcek_user(){
+# Checks whether user is present or not
+check_user(){
   USER=$1
 
   id ${USER}
-  return status=$?
+  return $?
 }
 
-add_user(){
+# To create user
+create_user(){
   USER=$1
-  PASSWORD="default_password"
   COMMENT="Managed by script"
-  useradd -c "$COMMENT" $USER
-  passwd $USER $PASSWORD
+  useradd -c "$COMMENT" $USER --create-home
   echo "Created user $USER successfully !!!"
 }
 
+# To delete users
+delete_users(){
+  echo "Deleting Users ..."
 
-echo "Creating users ..."
+  for user in ${delete_users_list[@]};
+  do
+    check_user $user
+    user_status=$?
+    
+    if [[ $user_status -eq 0 ]]
+    then
+      userdel -r $user
+    else
+      echo "The user ${user} dosen't exist !!!"
+    fi
+  done
+}
 
-for user in ${users[@]};
+# Creating users
+echo "Creating Users ..."
+
+for user in ${users_list[@]};
 do
-  user_status=check_user $user
+  check_user $user
+  user_status=$?
 
   if [[ $user_status -ne 0 ]]
   then
-    add_user $user
+    create_user $user
   else
     echo "The user ${user} already exist !!!"
   fi
 done
+
+# Deleting Users
+# delete_users
