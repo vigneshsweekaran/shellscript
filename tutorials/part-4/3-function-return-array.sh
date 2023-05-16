@@ -19,6 +19,6 @@ calculate() {
 calculate 20 5
 
 echo "The addition result is ${output[0]}"
-echo "The subraction result is ${output[1]}"
+echo "The subtraction result is ${output[1]}"
 echo "The multiplication result is ${output[2]}"
 echo "The division result is ${output[3]}"
