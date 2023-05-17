@@ -32,7 +32,7 @@ delete_users(){
     then
       userdel -r $user
     else
-      echo "The user ${user} dosen't exist !!!"
+      echo "The user ${user} doesn't exist !!!"
     fi
   done
 }
