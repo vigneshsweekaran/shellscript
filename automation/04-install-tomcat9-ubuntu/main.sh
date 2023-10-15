@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo apt update -y
-sudo apt install tomcat9 tomcat9-admin -y
+sudo apt update
+sudo apt install -y tomcat9 tomcat9-admin
 
